@@ -1,17 +1,18 @@
-import React from 'react'
+import React from 'react';
 import TeamMembers from '../TeamMembers';
+ // Assuming TeamMembers.js is renamed to TeamMember.js
 
-const Team = ({data}) => {
+ const Team = ({data, dispatch}) => {
 
-// const {team} = data;
+  const {team} = data;
+
   return (
     <div>
       <h1>Team</h1>
-      {
-      data.team.map((item) =>
-        <TeamMembers key={item.id} name={item.name} age={item.age}/>)}
+      {team.map((member) => <TeamMembers dispatch={dispatch} id={member.id} name={member.name} age={member.age} />)}
+      <h2>Average Age : {data.team.reduce((acc, current)=>acc+=current.age, 0)/data.team.length}</h2>
     </div>
-  )
-}
+  );
+};
 
-export default Team
+export default Team;
