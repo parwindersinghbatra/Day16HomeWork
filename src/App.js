@@ -61,6 +61,7 @@ function App() {
             const name = nameInputRef.current.value;
             const age = ageInputRef.current.value;
             const newEmployee = {
+              id: data.employees.length + 1,
               name: name,
               age: age,
             };
