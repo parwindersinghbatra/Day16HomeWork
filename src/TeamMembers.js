@@ -1,14 +1,17 @@
 import React from 'react'
+import './component/TeamMember.css'
 
 const TeamMembers = ({name, age,id,  dispatch}) => {
   
   return (
-    <div style={{backgroundColor:"green", margin:"10px 5px"}}>
-      <p>name : {name}</p>
-      <p>age : {age}</p>
+    <div className='Team_main'>
+      <div>{name}</div>
+      <div>{age}</div>
+      <div>
       <button
       onClick={() => dispatch({ type: 'remove_member_from_team', payload: id })}
       >Remove</button>
+      </div>
     </div>
   )
 }
