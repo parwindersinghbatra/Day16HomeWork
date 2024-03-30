@@ -12,19 +12,21 @@ const EmployeeCard = ({ name, age, id, dispatch}) => {
 
   return (
     <div className='main_div'>
-    <p>Name: {name}</p>
-    <p>Age: {age}</p>
-  
+    <div>{name}</div>
+    <div>{age}</div>
+    <div>
     <button
     disabled={isMemberAdded}
+    className='employee_btn'
       onClick={() => {
         dispatch({ type: 'add_member_to_team', payload: id })
         setIsMemberAdded(true)
         }
       } 
       >
-      Add to Team
+      Add
     </button>
+    </div>
   </div>
   );
 };
